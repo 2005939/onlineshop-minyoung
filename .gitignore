@@ -1,6 +1,6 @@
 *.pyc
 *~
-/venv/venv
+/venv
 __pychache__
 db.sqlite3
 .DS_Store
