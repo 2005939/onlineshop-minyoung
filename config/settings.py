@@ -15,12 +15,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import dj_database_url
 import sys
-sys.modules['django.utils.six.moves.urllib.parse']=__import__('six.moves.urllib_parse', fromlist=['urlencode'])
-sys.modules['django.utils.six.moves.urllib.request']=__import__('six.moves.urllib_request', fromlist=['urlopen'])
+
+sys.modules['django.utils.six.moves.urllib.parse'] = __import__('six.moves.urllib_parse', fromlist=['urlencode'])
+sys.modules['django.utils.six.moves.urllib.request'] = __import__('six.moves.urllib_request', fromlist=['urlopen'])
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -32,7 +32,6 @@ SECRET_KEY = 'b^z*cpzpj%(#4%($r*e@x4v0d)!getq*01uek!p2o!wuve_x2y'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
-
 
 # Application definition
 
@@ -75,7 +74,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS' : [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +89,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -137,7 +135,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -150,7 +147,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
@@ -166,12 +162,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 AUTH_USER_MODEL = 'photo.User'
 
-
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-
 
 SITE_ID = 1
 
@@ -179,9 +173,9 @@ LOGIN_REDIRECT_URL = '/'
 
 CART_ID = 'cart_in_session'
 
-IAMPORT_KEY = '3924151758618549' # iamport에서 발급받은 본인의 REST API 키
+IAMPORT_KEY = '3924151758618549'  # iamport에서 발급받은 본인의 REST API 키
 
-IAMPORT_SECRET = '2a469a77fe92c142f474e0465dc0271cf853cea4c82d7aa40a68e5ac889d07cb2d8516176284fb56' # iamport에서 발급받은 본인의 REST API Secret
+IAMPORT_SECRET = '2a469a77fe92c142f474e0465dc0271cf853cea4c82d7aa40a68e5ac889d07cb2d8516176284fb56'  # iamport에서 발급받은 본인의 REST API Secret
 
 DISQUS_WEBSITE_SHORTNAME = 'zerouriban-onlineshop'
 
